@@ -1,0 +1,30 @@
+﻿@model BugTracker.Models.Bug
+    @{
+        ViewBag.Title = "Добавление бага";
+
+    }
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Название</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Status" class="control-label">Описание</label>
+        <input type="text" asp-for="Status" class="form-control" />
+    </div>
+    Статус
+    <style>
+        select {
+            width: 90px; 
+            height: 30px
+        }
+    </style>
+    <select id="status" name="Status">
+        <option value="New" selected>New</option>
+        <option value="In Progress">In Order</option>
+        <option value="Done">Done</option>
+    </select>
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>
