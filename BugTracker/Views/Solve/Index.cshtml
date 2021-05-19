@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<BugTracker.Models.Improvement>
+
+@{
+    ViewBag.Title = "Все задачи";
+}
+<a asp-action="Create">Добавить задачу</a>
+<table class="table">
+    <tr><td>Id</td><td>Название</td><td>Статус</td><td>Описание</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.CurrentStatus</td>
+            <td>@item.Description</td>
+
+            <td>
+                <a asp-action="Edit" asp-controller="Solve" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-action="Delete" asp-controller="Solve" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+</table>
+

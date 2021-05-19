@@ -18,7 +18,7 @@ namespace BugTracker.Controllers
         {
             db = context;
         }
-
+        
         public async Task<IActionResult> Index()
         {
             return View(await db.Bugs.ToListAsync());
@@ -81,11 +81,6 @@ namespace BugTracker.Controllers
                 }
             }
             return NotFound();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
